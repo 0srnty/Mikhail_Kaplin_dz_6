@@ -65,6 +65,6 @@ FROM
 )
   AS counts;
 4.
-select sum(user_id) from likes where user_id in (select user_id from (select user_id from profiles order by birthday desc limit 10) as id);
+select count(target_id) from likes where user_id in (select user_id from (select user_id from profiles order by birthday desc limit 10) as id);
 
 5.
